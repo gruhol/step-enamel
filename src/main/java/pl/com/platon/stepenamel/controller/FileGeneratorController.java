@@ -10,11 +10,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import pl.com.platon.stepenamel.dto.UserDataDto;
 
-import java.io.File;
-import java.io.FileWriter;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 
 import static pl.com.platon.stepenamel.util.TemplateData.beforeEmail;
 import static pl.com.platon.stepenamel.util.TemplateData.beforeMobile;
@@ -34,18 +33,17 @@ public class FileGeneratorController {
                 beforeMobile + userDataDto.getMobilePhone() +
                 beforeEmail + userDataDto.getEmail() + end;
 
-        File newTextFile = new File("./stopki/stopka.html");
+        OutputStream out = new ByteArrayOutputStream();
+        out.write(str.getBytes());
 
-        FileWriter fw = new FileWriter(newTextFile);
-        fw.write(str);
-        fw.close();
-        final byte[] pdfBytes = Files.readAllBytes(Paths.get(String.valueOf(newTextFile)));
+        final byte[] file = str.getBytes(StandardCharsets.UTF_8);
+        out.close();
 
         final HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.parseMediaType("text/html"));
         headers.setContentDispositionFormData("attachment", null);
         headers.setCacheControl("no-cache");
 
-        return new ResponseEntity<>(pdfBytes, headers, HttpStatus.OK);
+        return new ResponseEntity<>(file, headers, HttpStatus.OK);
     }
 }
