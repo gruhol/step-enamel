@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
     <title>Generator stopki</title>
 </head>
 <body>
-<form>
+<form th:action="@{/generate}" th:object="${UserDataDto}" method="post">
     <div class="container">
         <div class="row">
             <div class="col-3"></div>
@@ -18,19 +18,19 @@
                     <legend>Wpisz dane:</legend>
                     <div class="mb-3">
                         <label for="TextInput" class="form-label">Imie i nazwisko</label>
-                        <input type="text" name="person" id="TextInput" class="form-control" placeholder="Jan Kowalski">
+                        <input type="text" th:name="person" id="TextInput" class="form-control" placeholder="Jan Kowalski">
                     </div>
                     <div class="mb-3">
                         <label for="TextInput" class="form-label">Telefon</label>
-                        <input type="text" name="person" id="phone" class="form-control" placeholder="(22) 329-50-48">
+                        <input type="text" th:name="phone" id="phone" class="form-control" placeholder="(22) 329-50-48">
                     </div>
                     <div class="mb-3">
                         <label for="TextInput" class="form-label">Telefon komórkowy</label>
-                        <input type="text" name="person" id="mobilePhone" class="form-control" placeholder="725-225-505">
+                        <input type="text" th:name="mobilePhone" id="mobilePhone" class="form-control" placeholder="725-225-505">
                     </div>
                     <div class="mb-3">
                         <label for="TextInput" class="form-label">Adres email</label>
-                        <input type="text" name="person" id="email" class="form-control" placeholder="jan.kowalski@platon.com.pl">
+                        <input type="text" th:name="email" id="email" class="form-control" placeholder="jan.kowalski@platon.com.pl">
                     </div>
                     <button type="submit" class="btn btn-primary">Generuj stopkę</button>
                 </fieldset>

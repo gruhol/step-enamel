@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml">
+<html lang="en" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <title></title>
@@ -177,25 +178,18 @@
                                                 <div style="font-family: sans-serif">
                                                     <div class=""
                                                          style="font-size: 12px; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 14.399999999999999px; color: #000000; line-height: 1.2;">
-                                                        <p
-                                                                style="margin: 0; mso-line-height-alt: 14.399999999999999px;">
-																			<span
-                                                                                    style="font-size:13px;">Pozdrawiam,</span><br /><span
-                                                                style="font-size:13px;">Milena
-																				Sadowska</span><br /><br /><strong><span
-                                                                style="font-size:13px;">Platon Sp. z
-																					o.o.</span></strong><br /><span
-                                                                style="font-size:13px;">Sławęcińska 16,
-																				Macierzysz</span><br /><span
-                                                                style="font-size:13px;">05-850 Ożarów
-																				Mazowiecki</span><br /><span
-                                                                style="font-size:13px;">tel. (22)
-																				329-50-48 kom.
-																				725-225-505</span><br /><span
-                                                                style="font-size:13px;">fax (22)
-																				329-50-30</span><br /><span
-                                                                style="font-size:13px;">milena.sadowska@platon.com.pl</span><br /><span
-                                                                style="font-size:13px;">www.platon.com.pl</span>
+                                                        <p style="margin: 0; mso-line-height-alt: 14.399999999999999px;">
+                                                            <span style="font-size:13px;">Pozdrawiam,</span><br />
+                                                            <span style="font-size:13px;" th:text="${userDataDto.person}">person</span><br /><br />
+                                                            <strong><span style="font-size:13px;">Platon Sp. z o.o.</span></strong><br />
+                                                            <span style="font-size:13px;">Sławęcińska 16, Macierzysz</span><br />
+                                                            <span style="font-size:13px;">05-850 Ożarów Mazowiecki</span><br />
+                                                            <span style="font-size:13px;">tel. </span>
+                                                            <span th:text="${userDataDto.phone}">phone</span> kom.
+                                                            <span th:text="${userDataDto.mobilePhone}">mobilePhone</span><br />
+                                                            <span style="font-size:13px;">fax (22) 329-50-30</span><br />
+                                                            <span style="font-size:13px;" th:text="${userDataDto.email}">email</span><br />
+                                                            <span style="font-size:13px;">www.platon.com.pl</span>
                                                         </p>
                                                     </div>
                                                 </div>
