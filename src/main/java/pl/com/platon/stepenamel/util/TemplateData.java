@@ -2,7 +2,7 @@ package pl.com.platon.stepenamel.util;
 
 public class TemplateData {
 
-    public String header = "<!DOCTYPE html>\n" +
+    public static String header = "<!DOCTYPE html>\n" +
             "\n" +
             "<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:th=\"http://www.thymeleaf.org\" lang=\"en\"\n" +
             "        xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:v=\"urn:schemas-microsoft-com:vml\">\n" +
@@ -10,7 +10,7 @@ public class TemplateData {
             "<head>\n" +
             "    <title>";
 
-    public String beforePerson = "</title>\n" +
+    public static String beforePerson = "</title>\n" +
             "    <meta content=\"text/html; charset=utf-8\" http-equiv=\"Content-Type\" />\n" +
             "    <meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\" />\n" +
             "    <!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]-->\n" +
@@ -187,14 +187,143 @@ public class TemplateData {
             "                                                        <p style=\"margin: 0; mso-line-height-alt: 14.399999999999999px;\">\n" +
             "                                                            <span style=\"font-size:13px;\">Pozdrawiam,</span><br />\n" +
             "                                                            <span style=\"font-size:13px;\" th:text=\"${userDataDto.person}\">";
-    public String beforePhone = "</span><br /><br />\n" +
+    public static String beforePhone = "</span><br /><br />\n" +
             "                                                            <strong><span style=\"font-size:13px;\">Platon Sp. z o.o.</span></strong><br />\n" +
             "                                                            <span style=\"font-size:13px;\">Sławęcińska 16, Macierzysz</span><br />\n" +
             "                                                            <span style=\"font-size:13px;\">05-850 Ożarów Mazowiecki</span><br />\n" +
             "                                                            <span style=\"font-size:13px;\">tel. </span>\n" +
             "                                                            <span th:text=\"${userDataDto.phone}\">";
 
-    public String beforeMobile = "</span> kom.\n" +
+    public static String beforeMobile = "</span> kom.\n" +
             "                                                            <span th:text=\"${userDataDto.mobilePhone}\">";
-    public String before;
+    public static String beforeEmail = "</span><br />\n" +
+            "                                                            <span style=\"font-size:13px;\">fax (22) 329-50-30</span><br />\n" +
+            "                                                            <span style=\"font-size:13px;\">";
+    public static String end = "</span><br />\n" +
+            "                                                            <span style=\"font-size:13px;\">www.platon.com.pl</span>\n" +
+            "                                                        </p>\n" +
+            "                                                    </div>\n" +
+            "                                                </div>\n" +
+            "                                            </td>\n" +
+            "                                        </tr>\n" +
+            "                                    </table>\n" +
+            "                                </td>\n" +
+            "                            </tr>\n" +
+            "                            </tbody>\n" +
+            "                        </table>\n" +
+            "                    </td>\n" +
+            "                </tr>\n" +
+            "                </tbody>\n" +
+            "            </table>\n" +
+            "            <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-3\"\n" +
+            "                   role=\"presentation\"\n" +
+            "                   style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fffefe;\" width=\"100%\">\n" +
+            "                <tbody>\n" +
+            "                <tr>\n" +
+            "                    <td>\n" +
+            "                        <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"\n" +
+            "                               class=\"row-content stack\" role=\"presentation\"\n" +
+            "                               style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000; width: 680px; margin: 0 auto;\"\n" +
+            "                               width=\"680\">\n" +
+            "                            <tbody>\n" +
+            "                            <tr>\n" +
+            "                                <td class=\"column column-1\"\n" +
+            "                                    style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: left; font-weight: 400; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\"\n" +
+            "                                    width=\"100%\">\n" +
+            "                                    <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\"\n" +
+            "                                           class=\"image_block block-1\" role=\"presentation\"\n" +
+            "                                           style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\"\n" +
+            "                                           width=\"100%\">\n" +
+            "                                        <tr>\n" +
+            "                                            <td class=\"pad\" style=\"width:100%;\">\n" +
+            "                                                <div align=\"center\" class=\"alignment\"\n" +
+            "                                                     style=\"line-height:10px\">\n" +
+            "                                                    <a href=\"https://aozb.short.gy/eYLxkh\" style=\"outline:none\" tabindex=\"-1\" target=\"_blank\">\n" +
+            "                                                        <img src=\"https://platon.com.pl/wspolpraca/images/banner_stopka.png\" style=\"height: auto; display: block; border: 0; max-width: 600px; width: 100%;\" width=\"600\" />\n" +
+            "                                                    </a>\n" +
+            "                                                </div>\n" +
+            "                                            </td>\n" +
+            "                                        </tr>\n" +
+            "                                    </table>\n" +
+            "                                </td>\n" +
+            "                            </tr>\n" +
+            "                            </tbody>\n" +
+            "                        </table>\n" +
+            "                    </td>\n" +
+            "                </tr>\n" +
+            "                </tbody>\n" +
+            "            </table>\n" +
+            "            <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-4\"\n" +
+            "                   role=\"presentation\"\n" +
+            "                   style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fffefe;\" width=\"100%\">\n" +
+            "                <tbody>\n" +
+            "                <tr>\n" +
+            "                    <td>\n" +
+            "                        <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"\n" +
+            "                               class=\"row-content stack\" role=\"presentation\"\n" +
+            "                               style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000; width: 680px; margin: 0 auto;\"\n" +
+            "                               width=\"680\">\n" +
+            "                            <tbody>\n" +
+            "                            <tr>\n" +
+            "                                <td class=\"column column-1\"\n" +
+            "                                    style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: left; font-weight: 400; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\"\n" +
+            "                                    width=\"100%\">\n" +
+            "                                    <div class=\"spacer_block block-1\"\n" +
+            "                                         style=\"height:10px;line-height:10px;font-size:1px;\"> </div>\n" +
+            "                                </td>\n" +
+            "                            </tr>\n" +
+            "                            </tbody>\n" +
+            "                        </table>\n" +
+            "                    </td>\n" +
+            "                </tr>\n" +
+            "                </tbody>\n" +
+            "            </table>\n" +
+            "            <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"row row-5\"\n" +
+            "                   role=\"presentation\"\n" +
+            "                   style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fffefe;\" width=\"100%\">\n" +
+            "                <tbody>\n" +
+            "                <tr>\n" +
+            "                    <td>\n" +
+            "                        <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"\n" +
+            "                               class=\"row-content stack\" role=\"presentation\"\n" +
+            "                               style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; color: #000; width: 680px; margin: 0 auto;\"\n" +
+            "                               width=\"680\">\n" +
+            "                            <tbody>\n" +
+            "                            <tr>\n" +
+            "                                <td class=\"column column-1\"\n" +
+            "                                    style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: left; font-weight: 400; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom: 0px; border-left: 0px;\"\n" +
+            "                                    width=\"100%\">\n" +
+            "                                    <table border=\"0\" cellpadding=\"10\" cellspacing=\"0\"\n" +
+            "                                           class=\"paragraph_block block-1\" role=\"presentation\"\n" +
+            "                                           style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;\"\n" +
+            "                                           width=\"100%\">\n" +
+            "                                        <tr>\n" +
+            "                                            <td class=\"pad\">\n" +
+            "                                                <div\n" +
+            "                                                        style=\"color:#101112;direction:ltr;font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:13px;font-weight:400;letter-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:15.6px;\">\n" +
+            "                                                    <p style=\"margin: 0;\">Sąd Rejonowy dla M.ST.\n" +
+            "                                                        Warszawy w Warszawie, XIX Wydział Gospodarczy\n" +
+            "                                                        Krajowego Rejestru Sądowego Numer KRS:\n" +
+            "                                                        0000150849, Numer NIP: 527-23-97-698, Wysokość\n" +
+            "                                                        kapitału zakładowego: 200.000,00 zł</p>\n" +
+            "                                                </div>\n" +
+            "                                            </td>\n" +
+            "                                        </tr>\n" +
+            "                                    </table>\n" +
+            "                                </td>\n" +
+            "                            </tr>\n" +
+            "                            </tbody>\n" +
+            "                        </table>\n" +
+            "                    </td>\n" +
+            "                </tr>\n" +
+            "                </tbody>\n" +
+            "            </table>\n" +
+            "\n" +
+            "        </td>\n" +
+            "    </tr>\n" +
+            "    </tbody>\n" +
+            "</table>\n" +
+            "</body>\n" +
+            "\n" +
+            "</html>";
 }
